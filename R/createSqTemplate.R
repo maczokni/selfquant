@@ -6,19 +6,19 @@
 #' @keywords quantified self
 #' @export
 #' @examples
-#' some example here
+#' createSqTemplate()
 
 
-createSqTemplate <- function(title = "Self Quant", worksheet = "Template"){
+createSqTemplate <- function(title = "Self Quant", workSheet = "Template"){
   sq_temp <- data.frame("X1" = c( "Work", "Health", "Social", "Xcurriculars", "Satisfy_prefs", "Managing_Risk", "Spending", "Eco_points", "Notables"),
-                        "Week1+" = c(0,0, 0, 0, 0, 0, 0, 0, 0),
-                        "Week1-" = c(0,0, 0, 0, 0, 0, 0, 0, 0),
-                        "Week2+" = c(0,0, 0, 0, 0, 0, 0, 0, 0),
-                        "Week2-" = c(0,0, 0, 0, 0, 0, 0, 0, 0),
-                        "Week3+" = c(0,0, 0, 0, 0, 0, 0, 0, 0),
-                        "Week3-" = c(0,0, 0, 0, 0, 0, 0, 0, 0),
-                        "Week4+" = c(0,0, 0, 0, 0, 0, 0, 0, 0),
-                        "Week4-" = c(0,0, 0, 0, 0, 0, 0, 0, 0))
+                        "Week1_pos" = c(0,0, 0, 0, 0, 0, 0, 0, 0),
+                        "Week1_neg" = c(0,0, 0, 0, 0, 0, 0, 0, 0),
+                        "Week2_pos" = c(0,0, 0, 0, 0, 0, 0, 0, 0),
+                        "Week2_neg" = c(0,0, 0, 0, 0, 0, 0, 0, 0),
+                        "Week3_pos" = c(0,0, 0, 0, 0, 0, 0, 0, 0),
+                        "Week3_neg" = c(0,0, 0, 0, 0, 0, 0, 0, 0),
+                        "Week4_pos" = c(0,0, 0, 0, 0, 0, 0, 0, 0),
+                        "Week4_neg" = c(0,0, 0, 0, 0, 0, 0, 0, 0))
 
   selfQuantTemplate <- gs_new(title, ws_title = workSheet, input = sq_temp,
                               trim = TRUE, verbose = FALSE)
