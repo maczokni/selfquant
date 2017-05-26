@@ -1,0 +1,32 @@
+---
+title: "Untitled"
+author: "Team CityQuant/SelfQuant!"
+date: "5/26/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Pull the current month from google sheets
+
+```{r}
+library(googlesheets)
+(my_sheets <- gs_ls())
+devtools::install_github('maczokni/selfquant')
+library(dplyr)
+library(selfquant)
+
+sq_data <- getQuant()
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
