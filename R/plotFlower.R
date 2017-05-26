@@ -24,8 +24,7 @@ plotFlower <- function(sq_summary){
   PlotFlower(
     petalDf$mean_gtb, rep(1, nrow(petalDf)), petalDf$Metric, center=round(mean(petalDf$mean_gtb),2),
     main = "Good to bad ratio", fill.col = RColorBrewer::brewer.pal(nrow(petalDf), 'Spectral'),
-    max.length=max(petalDf$mean_gtb)),
-    max.length = 100, disk=0.4, label.cex=0.9, label.offset=0.155, cex=2.2, cex.main=2.5)
+    max.length=max(petalDf$mean_gtb))
 
 
 }

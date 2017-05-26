@@ -13,6 +13,8 @@ getQuant(title = "Self Quant", workSheet = "Template")
 }
 \description{
 This function reads your monthly stats from a google sheet to a dataframe
+It also calculates some summaries in additional columns,
+These are the net scores for each week (good scores - bad scores) and the good to bad ratio (good scores/ bad scores)
 }
 \examples{
 sq_data <- getQuant()

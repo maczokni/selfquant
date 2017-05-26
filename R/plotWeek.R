@@ -8,7 +8,7 @@
 #' @import ggplot2
 #' @import tidyr
 #' @examples
-#' plotWeek(summary = summary_df)
+#' plotWeek(summary = sq_data)
 #'
 
 plotWeek <- function(sq_summary){

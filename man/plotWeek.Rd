@@ -13,7 +13,7 @@ plotWeek(sq_summary)
 This function looks at variation in your net score for each metric over the last 4 weeks
 }
 \examples{
-plotWeek(summary = summary_df)
+plotWeek(summary = sq_data)
 
 }
 \keyword{quantified}
