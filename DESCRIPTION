@@ -9,10 +9,7 @@ Author: c(
     person("Tim", "Phan", email = ""), 
     person("Jasmine", "Dumas", email = ""))
 Maintainer: The package maintainer <reka.solymosi@manchester.ac.uk>
-Description: This package is for collecting and visualising data about yourself. 
-Based on a scoring system developed by Chelsea, you assess your performance across 9 metrics. Every time you do something positive in a metric you add one point to the positive column, and every time you do something negative you add a point to the negative column. 
-At the end of each week, the scores are compiled and archived. Also you can update your dahsboard, and produce weekly stats, and compare to overall performance. 
-Not sure what else to put here...!
+Description: This package is for collecting and visualising data about yourself.Based on a scoring system developed by Chelsea, you assess your performance across 9 metrics. Every time you do something positive in a metric you add one point to the positive column, and every time you do something negative you add a point to the negative column. At the end of each week, the scores are compiled and archived. Also you can update your dahsboard, and produce weekly stats, and compare to overall performance. Not sure what else to put here...!
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
