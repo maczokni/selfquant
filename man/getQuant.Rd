@@ -15,7 +15,7 @@ getQuant(title = "Self Quant", workSheet = "Template")
 This function reads your monthly stats from a google sheet to a dataframe
 }
 \examples{
-some example here
+sq_data <- getQuant()
 }
 \keyword{quantified}
 \keyword{self}

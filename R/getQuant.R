@@ -6,7 +6,7 @@
 #' @keywords quantified self
 #' @export
 #' @examples
-#' some example here
+#' sq_data <- getQuant()
 
 getQuant <- function(title="Self Quant", workSheet="Template") {
   selfQuant <- gs_title(title)
