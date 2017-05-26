@@ -1,17 +1,11 @@
-# Hello, world!
-#
-# This is an example function named 'hello' 
-# which prints 'Hello, world!'.
-#
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Build and Reload Package:  'Cmd + Shift + B'
-#   Check Package:             'Cmd + Shift + E'
-#   Test Package:              'Cmd + Shift + T'
+##' Example function for delfquant
+#'
+#' This function reads your monthly stats from a google sheet and does some stuff
+#' @param something parameter for the function
+#' @keywords quantified self
+#' @export
+#' @examples
+#' some example here
 
 hello <- function() {
   print("Hello, world!")
