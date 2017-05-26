@@ -4,7 +4,7 @@
 \alias{createSqTemplate}
 \title{createSqTemplate function creates a new google sheet in the template form which we follow for the quantified self data recording process}
 \usage{
-createSqTemplate(title = "Self Quant", worksheet = "Template")
+createSqTemplate(title = "Self Quant", workSheet = "Template")
 }
 \arguments{
 \item{title}{parameter for the name of the google sheet, defaults to Self Quant}
@@ -15,7 +15,7 @@ createSqTemplate(title = "Self Quant", worksheet = "Template")
 This function creates a new google sheet called "Self Quant", and worksheet called "Template"
 }
 \examples{
-some example here
+createSqTemplate()
 }
 \keyword{quantified}
 \keyword{self}

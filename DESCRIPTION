@@ -16,5 +16,7 @@ LazyData: true
 Imports:
     googlesheets,
     dplyr,
-    ggplot2
+    ggplot2, 
+    tidyr,
+    plotly
 RoxygenNote: 6.0.1.9000
