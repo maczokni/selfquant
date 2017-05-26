@@ -3,6 +3,7 @@
 #' This function calculates some summaries and adds them as columns to this dataframe
 #' @keywords quantified self
 #' @export
+#' @import dplyr
 #' @examples
 #' summary_df <- calcSummary(sq_data)
 

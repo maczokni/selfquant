@@ -4,6 +4,9 @@
 #' @param summary parameter for the summarised dataset created using the calcSummary() function
 #' @keywords quantified self
 #' @export
+#' @import dplyr
+#' @import ggplot2
+#' @import tidyr
 #' @examples
 #' plotWeek(summary = summary_df)
 #'
@@ -24,7 +27,7 @@ plotWeek <- function(sq_summary){
          y = "Net score") +
     scale_x_discrete(labels=c("Week 1", "Week 2", "Week 3", "Week 4"))
 
-  ggplotly(s)
+  ggplotly(s, tooltip = "netScore")
 
 
 }

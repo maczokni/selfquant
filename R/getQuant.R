@@ -5,6 +5,8 @@
 #' @param workSheet parameter for the name of the worksheet within the doc, defaults to Template
 #' @keywords quantified self
 #' @export
+#' @import googlesheets
+#' @import dplyr
 #' @examples
 #' sq_data <- getQuant()
 #'
