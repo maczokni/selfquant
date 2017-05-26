@@ -8,7 +8,7 @@
 #' @examples
 #' some example here
 
-getQuant <- function(title="Self Quant", workSheet="Template") {(my_sheets <- gs_ls())
+getQuant <- function(title="Self Quant", workSheet="Template") {
   selfQuant <- gs_title(title)
   sq_data <- selfQuant %>%
     gs_read(ws = workSheet)
