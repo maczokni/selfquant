@@ -1,11 +1,18 @@
 Package: selfquant
 Type: Package
-Title: What the Package Does (Title Case)
+Title: This package is for creating a quantified self tracker using google sheets, and for pulling, displaying, and archiving the data collected with it. 
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: c(
+    person("Reka", "Solymosi", email = "reka.solymosi@manchester.ac.uk"),
+    person("Chelsea", "Ursaner", email = ""), 
+    person("Ben", "Best", email = ""), 
+    person("Tim", "Phan", email = ""), 
+    person("Jasmine", "Dumas", email = ""))
+Maintainer: The package maintainer <reka.solymosi@manchester.ac.uk>
+Description: This package is for collecting and visualising data about yourself. 
+Based on a scoring system developed by Chelsea, you assess your performance across 9 metrics. Every time you do something positive in a metric you add one point to the positive column, and every time you do something negative you add a point to the negative column. 
+At the end of each week, the scores are compiled and archived. Also you can update your dahsboard, and produce weekly stats, and compare to overall performance. 
+Not sure what else to put here...!
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
