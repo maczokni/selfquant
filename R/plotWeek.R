@@ -7,6 +7,7 @@
 #' @import dplyr
 #' @import ggplot2
 #' @import tidyr
+#' @import plotly
 #' @examples
 #' plotWeek(summary = sq_data)
 #'
