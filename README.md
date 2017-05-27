@@ -5,7 +5,7 @@ These categories include:
 
 To get started: 
 
-1 - Download googlesheets package:
+1 - Download these packages:
 - This project uses:
     - google sheets, so you will need the [googlesheets](https://github.com/jennybc/googlesheets) package. 
     - dplyr
