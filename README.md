@@ -35,7 +35,7 @@ It will create a sheet called *Self Quant* with a worksheet in it called *Templa
 
 You can now fill this out for the next 4 weeks. Every time you do something good in a particular area, for example you go above and beyond at work, you update the relevant cell by adding a point. On the other hand, if you do something bad, like miss a deadline, you would add a point to the negative column. As humans, we're often fluctuating between congratulating ourselves and being frustrated at ourselves. Tracking allows you to capture the experience as a data point and move on. 
 
-**To make this truly work, the most important (and most lucrative) system you'll need to add into your life is a Weekly Review. See more [here](https://medium.com/@pwnerchelsea/the-weekly-review-f1ae3316d130).
+**To make this truly work, the most important (and most lucrative) system you'll need to add into your life is a Weekly Review. See more [here](https://medium.com/@pwnerchelsea/the-weekly-review-f1ae3316d130).**
 
 Once you have completed this for 4 weeks, you can read in your data, for some fun plotting. 
 
