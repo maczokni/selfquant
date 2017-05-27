@@ -21,7 +21,7 @@ getQuant <- function(title="Self Quant", workSheet="Template") {
   selfQuant <- gs_title(title)
   sq_data <- selfQuant %>%
     gs_read(ws = workSheet)
-  sq_data <- head(sq_data, n=9)
+  sq_data <- head(sq_data, n=8)
   sq_data[, 2:9] <- sapply(sq_data[, 2:9],as.numeric)
   summary_df <- sq_data %>%
     group_by(X1) %>%
