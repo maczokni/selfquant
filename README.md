@@ -2,7 +2,7 @@
 
 This is a package for getting data from our quantified self template on google sheets, to keep track of your weekly performance in various categories. 
 These categories include: 
-![Image of Categories](blob:https://wordpress.com/8140ade2-adaf-4b83-90cf-049414db7c02)
+![Image of Categories](https://humanpoweredla.files.wordpress.com/2017/05/screen-shot-2017-05-26-at-5-26-30-pm1.png)
 
 To get started: 
 
