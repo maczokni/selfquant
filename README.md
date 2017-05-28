@@ -1,7 +1,8 @@
 # selfquant
 
-This is a package for getting data from our quantified self template on google sheets, to keep track of your weekly performance in various categories. 
+This is a package for getting data from our quantified self template on google sheets, to keep track of your weekly performance in various categories. The game is primarily designed to keep you engaged and feeling rewarded for building good habits. 
 These categories include: 
+![Image of Categories](https://humanpoweredla.files.wordpress.com/2017/05/categories1.png)
 
 To get started: 
 
@@ -22,7 +23,7 @@ To get started:
 
 Then you can use the functions in this package to get your weekly stats, visualise them in a report/ dashboard/ whatever out output is, and archive your points. 
 
-##Example workflow
+## Example workflow
 
 You can create a template for recording points (both plus and minus points) about the 9 specified metrics by using the *createSqTemplate* function: 
 
@@ -32,7 +33,9 @@ It will create a sheet called *Self Quant* with a worksheet in it called *Templa
 
 ![Image of Template](https://github.com/maczokni/selfquant/blob/master/imgOfTempSq.png)
 
-You can now fill this out for the next 4 weeks. Every time you do something good in a particular area, for example you go above and beyond at work, you update the relevant cell by adding a value. On the other hand, if you do something bad, like miss a deadline, you would add a point to the negative column. This way you keep track of all the good and all the bad!
+You can now fill this out for the next 4 weeks. Every time you do something good in a particular area, for example you go above and beyond at work, you update the relevant cell by adding a point. On the other hand, if you do something bad, like miss a deadline, you would add a point to the negative column. As humans, we're often fluctuating between congratulating ourselves and being frustrated at ourselves. Tracking allows you to capture the experience as a data point and move on. 
+
+**To make this truly work, the most important (and most lucrative) system you'll need to add into your life is a Weekly Review. See more [here](https://medium.com/@pwnerchelsea/the-weekly-review-f1ae3316d130).**
 
 Once you have completed this for 4 weeks, you can read in your data, for some fun plotting. 
 
