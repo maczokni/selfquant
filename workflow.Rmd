@@ -1,6 +1,6 @@
 ---
-title: "Untitled"
-author: "Team CityQuant/SelfQuant!"
+title: "SelfQuant Workflow Example(s)"
+author: "Team CityQuant/SelfQuant"
 date: "5/26/2017"
 output: html_document
 ---
@@ -9,24 +9,25 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Pre-Workflow Setup Steps
+1. Download the selfquant package by entering the line devtools::install_github('maczokni/selfquant'). 
+2. Make your personal google sheet workbook to track your life. You can do this either by using the createSqTemplate() function within this package or making a duplicate through the Google Sheets UI [here](https://docs.google.com/spreadsheets/d/1ulmrOuD2_jCYJ4TxTVcNZCPqUVR5wxx6DoXW_uz-6lk/edit?usp=sharing)
+
 ## Pull the current month from google sheets
 
 ```{r}
 library(googlesheets)
-(my_sheets <- gs_ls())
-devtools::install_github('maczokni/selfquant')
 library(dplyr)
 library(selfquant)
 
-sq_data <- getQuant()
+#Authenticate R to look at my Google Docs
+(my_sheets <- gs_ls())
+#Pull my custom tracker to look at May data
+sq_data <- getQuant(title = "Chelsea Quant", workSheet = "0517")
+
+#Plot the month's data
+plotWeek(summary = sq_data)
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
