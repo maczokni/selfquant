@@ -17,7 +17,7 @@
 #' You can read this in with:
 #' sq_data <- getQuant(title="Self Quant", workSheet = "Template")
 
-getQuant <- function(title="Self Quant", workSheet="Template") {
+getQuant <- function(title="Self Quant", workSheet="Example") {
   selfQuant <- gs_title(title)
   sq_data <- selfQuant %>%
     gs_read(ws = workSheet)
