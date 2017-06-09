@@ -19,6 +19,7 @@ Pre-Workflow Setup Steps
 library(googlesheets)
 library(dplyr)
 library(selfquant)
+library(ggplot2)
 
 #Authenticate R to look at my Google Docs
 (my_sheets <- gs_ls())
@@ -29,7 +30,8 @@ sq_data <- getQuant(title = "Chelsea Quant", workSheet = "0517")
 summary_df <- calcSummary(sq_data)
 
 #Plot the month's data
-#plotWeek(summary = summary_df)
+plotWeek(summary = sq_data)
+plotFlower(summary = sq_data)
 ```
 
 
