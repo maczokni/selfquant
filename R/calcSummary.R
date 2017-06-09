@@ -10,7 +10,7 @@
 calcSummary <- function(sq_data){
   sq_data[, 2:9] <- sapply(sq_data[, 2:9],as.numeric)
   summary_df <- sq_data %>%
-                  group_by(Realm) %>%
+                  group_by(X1) %>%
                   mutate(gtb_w1= `Week1_pos`/`Week1_neg`,
                          gtb_w2= `Week2_pos`/`Week2_neg`,
                          gtb_w3= `Week3_pos`/`Week3_neg`,
