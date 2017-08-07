@@ -21,7 +21,7 @@ plotWeek <- function(sq_summary){
   netColsSum <- tidyr::gather(netCols, "week", "netScore", 2:5)
 
   #rename the metric column
-  names(netColsSum)[1]<-"Metric"
+  names(netColsSum)[1]<-"metric"
 
   #create line plot of each metric over the 4 weeks
   s <- ggplot2::ggplot(netColsSum, aes(x= week, y= netScore, group=metric, colour=metric)) +
