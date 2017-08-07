@@ -49,13 +49,15 @@ Now you have the dataframe of your points, and some additional summary columns. 
 
 So now you can plot your results. You can look at variation in your net scores over the past 4 weeks by using the *plotWeek* function:
 
-`plotWeek(summary = sq_data)`
+`plotWeek(sq_summary = sq_data)`
 
 ![Image of plotWeek](https://github.com/maczokni/selfquant/blob/master/plotWeek.png)
 
-You can also look at the ratio of good to bad points. This function looks at variation in your good to bad ratio for each metric over the last 4 weeks. Each petal of the flower is one of the metrics. The score in the middle represents the average good to bad ratio score across all metrics. If it is greater than 1, then overall you have more good, and if it's smaller than 1, you have more bad. You create this withthe *flowerPlot* function:
+You can also look at the net score of good to bad points. This function looks at variation in your good to bad net score for each metric over the last 4 weeks. Each petal of the flower represents one of the metrics. The score in the middle represents the total good to bad net score across all metrics. If it is greater than 0, then overall you have more good, and if it's smaller than 0, you have more bad. You create this withthe *flowerPlot* function:
 
-`plotFlower(summary = sq_data)`
+`plotFlower(sq_summary = sq_data)`
 
-![Image of flowerPlot](https://github.com/maczokni/selfquant/blob/master/flowerPlot.png)
+![Image of flowerPlot](https://github.com/maczokni/selfquant/blob/master/net_flower_plot.png)
+
+Metrics that are empty are those where your score is zero or lower. 
 
