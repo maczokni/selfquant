@@ -65,7 +65,7 @@ You can also look at the net score of good to bad points. This function looks at
 
 Metrics that are empty are those where your score is zero or lower. 
 
-#Generating a report
+# Generating a report
 
 You can generate monthly reports from your data, by using our template. To load this, simply create a new rmarkdown document, select 'from templates' and find the selfquant report template: 
 
