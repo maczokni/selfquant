@@ -26,7 +26,7 @@ sq_worksheet <- "July_2017"
 
 #To read your in from google sheets, run the following:
 
-(my_sheets <- gs_ls())
+(my_sheets <- gs_ls()) #you might need to run this outside the markdown doc to create oauth token for the doc to knit...
 sq_data <- getQuant(title=sq_title, workSheet = sq_worksheet)
 
 
