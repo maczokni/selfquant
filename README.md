@@ -1,5 +1,9 @@
 # selfquant
 
+NOTE: We're still working on updating this package frequently, so please make sure you have the most recent version installed by using
+devtools::install_github('maczokni/selfquant')
+
+
 This is a package for getting data from our quantified self template on google sheets, to keep track of your weekly performance in various categories. The game is primarily designed to keep you engaged and feeling rewarded for building good habits. 
 These categories include: 
 ![Image of Categories](https://humanpoweredla.files.wordpress.com/2017/05/categories1.png)
