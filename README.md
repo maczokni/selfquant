@@ -61,3 +61,12 @@ You can also look at the net score of good to bad points. This function looks at
 
 Metrics that are empty are those where your score is zero or lower. 
 
+#Generating a report
+
+You can generate monthly reports from your data, by using our template. To load this, simply create a new rmarkdown document, select 'from templates' and find the selfquant report template: 
+
+![Image of finding selfquant template](https://github.com/maczokni/selfquant/blob/master/selfquant_report.png)
+
+This will load a rmarkdown doc with some instructions in there. You might get an error when knitting that tells you something like: *oauth listener() needs an interactive environment rmarkdown*. In this case, just run the bit of code highlighted in the markdown to create an oauth token. Once that exists your report should compile fine. 
+
+
