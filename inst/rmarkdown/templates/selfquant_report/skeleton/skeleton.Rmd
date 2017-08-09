@@ -1,0 +1,76 @@
+---
+title: "Selfquant Report"
+author: "Reka Solymosi"
+date: "07/08/2017"
+output: html_document
+---
+
+```{r, message=FALSE,warning=FALSE}
+library(googlesheets)
+library(tidyverse)
+library(plotly)
+library(ohicore) # devtools::install_github('ohi-science/ohicore')
+library(selfquant) # devtools::install_github('maczokni/selfquant')
+```
+
+
+
+```{r, echo=FALSE, message=FALSE,warning=FALSE, results="hide"}
+#This markdown template allows you to generate a monthly report from your selfquant results. It will automatically generate everything, but you will need to read in your data first. 
+
+#Set the title of the google sheet (eg: Reka Quant), and the name of the specific worksheet (eg: July_2017)
+
+sq_title <- "Reka Quant"
+sq_worksheet <- "July_2017"
+
+
+#To read your in from google sheets, run the following:
+
+(my_sheets <- gs_ls())
+sq_data <- getQuant(title=sq_title, workSheet = sq_worksheet)
+
+
+petalDf <- sq_data %>%
+  dplyr::select( X1, net_w1, net_w2, net_w3, net_w4) %>%
+  tidyr::gather("week", "net", 2:5) %>%
+  dplyr::group_by(X1) %>%
+  dplyr::summarise(mean_net=mean(net)) %>%
+  dplyr::arrange(-mean_net)
+  
+names(petalDf)[1]<-"Metric"
+
+topMetric <- head(petalDf$Metric, n=1)
+bottomMetric <- tail(petalDf$Metric, n=1)
+
+```
+
+
+
+# `r I(sq_worksheet)` Selfquant Report
+
+This report summarises the scores from your selfquant point scoring system for `r I(sq_worksheet)`. 
+
+
+Your highest scoring category was `r I(head(petalDf$Metric, n=1))` with a net score of `r I(head(petalDf$mean_net, n=1))`  over the month, while your lowest score was `r I(tail(petalDf$mean_net, n=1))` in the `r I(tail(petalDf$Metric, n=1))` category. 
+
+
+This plot shows your scores in each category across the 4 weeks of the `r I(sq_worksheet)` space: 
+
+```{r, echo=FALSE}
+plotWeek(sq_summary = sq_data)
+```
+
+
+
+And this plot shows you your overall net scores in each category: 
+
+This plot shows your scores in each category across the 4 weeks of the `r I(sq_worksheet)` space: 
+
+```{r, echo=FALSE}
+plotFlower(sq_summary = sq_data)
+```
+
+
+The score in the middle represents the total good to bad net score across all metrics. If it is greater than 0, then overall you have more good, and if it's smaller than 0, you have more bad. 
+
+
