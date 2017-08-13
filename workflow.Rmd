@@ -20,18 +20,21 @@ library(googlesheets)
 library(dplyr)
 library(selfquant)
 library(ggplot2)
+library(plotly)
+
+devtools::install_github("ohi-science/ohicore")
 
 #Authenticate R to look at my Google Docs
 (my_sheets <- gs_ls())
 #Pull my custom tracker to look at May data
-sq_data <- getQuant(title = "Chelsea Quant", workSheet = "0517")
+sq_data <- getQuant(title = "Chelsea Quant", workSheet = "0717")
 
 #calculate summary stats
 summary_df <- calcSummary(sq_data)
 
 #Plot the month's data
-plotWeek(summary = sq_data)
-plotFlower(summary = sq_data)
+plotWeek(sq_summary = summary_df)
+plotFlower(sq_summary = summary_df)
 ```
 
 
