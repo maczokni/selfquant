@@ -1,0 +1,102 @@
+---
+title: "Selfquant Report"
+author: "Chelsea Ursaner"
+date: "07/08/2017"
+output: html_document
+---
+
+```{r, message=FALSE,warning=FALSE}
+library(googlesheets)
+library(tidyverse)
+library(plotly)
+library(ohicore) # devtools::install_github('ohi-science/ohicore')
+library(selfquant) # devtools::install_github('maczokni/selfquant')
+```
+
+
+
+```{r, echo=FALSE, message=FALSE,warning=FALSE, results="hide"}
+#This markdown template allows you to generate a monthly report from your selfquant results. It will automatically generate everything, but you will need to read in your data first. 
+
+#Set the title of the google sheet (eg: Reka Quant), and the name of the specific worksheet (eg: July_2017)
+
+sq_title <- "Chelsea Quant"
+sq_worksheet <- "July 2017"
+
+
+#To read your in from google sheets, run the following:
+
+(my_sheets <- gs_ls()) #you might need to run this outside the markdown doc to create oauth token for the doc to knit...
+sq_data <- getQuant(title=sq_title, workSheet = sq_worksheet)
+#calculate summary stats
+sq_data[is.na(sq_data)] <- 0
+sq_summary <- calcSummary(filter(sq_data, X1 != "Notables"))
+
+petalDf <- sq_summary %>%
+  dplyr::select( X1, net_w1, net_w2, net_w3, net_w4) %>%
+  tidyr::gather("week", "net", 2:5) %>%
+  dplyr::group_by(X1) %>%
+  dplyr::summarise(score=sum(net)) %>%
+  dplyr::arrange(-score)
+  
+names(petalDf)[1]<-"Metric"
+
+topMetric <- head(petalDf$Metric, n=1)
+bottomMetric <- tail(petalDf$Metric, n=1)
+
+```
+
+
+
+# `r I(sq_worksheet)` Selfquant Report
+
+This report summarises the scores from your selfquant point scoring system for `r I(sq_worksheet)`. 
+
+
+Your highest scoring category was `r I(head(petalDf$Metric, n=1))` with a net score of `r I(head(petalDf$mean_net, n=1))`  over the month, while your lowest score was `r I(tail(petalDf$mean_net, n=1))` in the `r I(tail(petalDf$Metric, n=1))` category. 
+
+
+This plot shows your scores in each category across the 4 weeks of the `r I(sq_worksheet)` space: 
+
+```{r, echo=FALSE, message=FALSE,warning=FALSE}
+plotWeek(sq_summary)
+```
+
+
+And this plot shows you your overall net scores in each category: 
+
+This plot shows your scores in each category across the 4 weeks of the `r I(sq_worksheet)` space: 
+
+```{r, echo=FALSE, message=FALSE,warning=FALSE}
+plotFlower <- function(sq_summary){
+
+  #first subset the dataframe to contain only the metric variable (x1) and the net scores for each week
+  netCols <- dplyr::select(sq_summary, X1, net_w1, net_w2, net_w3, net_w4)
+
+  #then gather to get week as one variable
+  netColsSum <- tidyr::gather(netCols, "week", "net", 2:5)
+
+  #rename the metric column
+  names(netColsSum)[1]<-"Metric"
+
+  #get the mean good to bad net score over all 4 weeks for each metric
+  petalDf <- netColsSum %>%
+              dplyr::group_by(Metric) %>%
+              dplyr::summarise(score=sum(net))
+
+  #make the flower plot
+  PlotFlower(
+    petalDf$score, rep(1, nrow(petalDf)), petalDf$Metric, center=sum(petalDf$score),
+    main = "Score This Month", fill.col = RColorBrewer::brewer.pal(nrow(petalDf), 'Spectral'), disk = 0.33,
+    xlim = c(-2,2), ylim = c(-2,2))
+
+
+}
+
+plotFlower(sq_summary)
+```
+
+
+The score in the middle represents the total score for the month. Your current average monthly score is 43 and your best score is 55.  
+
+
