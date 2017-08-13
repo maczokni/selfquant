@@ -21,8 +21,7 @@ library(dplyr)
 library(selfquant)
 library(ggplot2)
 library(plotly)
-
-devtools::install_github("ohi-science/ohicore")
+library(ohicore)
 
 #Authenticate R to look at my Google Docs
 (my_sheets <- gs_ls())
